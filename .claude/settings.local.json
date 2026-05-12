@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(npx *)",
+      "WebSearch",
+      "WebFetch(domain:www.pacermonitor.com)",
+      "WebFetch(domain:www.pkgpulse.com)",
+      "WebFetch(domain:scrapeops.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.scraperapi.com)",
+      "WebFetch(domain:projudi.tjba.jus.br)",
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(not exist *)",
+      "Bash(npm info *)",
+      "Bash(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\pedro\\\\OneDrive\\\\Documentos\\\\projetos\\\\automations\\\\.planning\\\\research\")",
+      "Bash(Out-Null)",
+      "Bash(Write-Host \"done\")",
+      "WebFetch(domain:brightdata.com)",
+      "Bash(powershell.exe *)",
+      "Bash(git -C \"C:/Users/pedro/OneDrive/Documentos/projetos/automations\" add .planning/ROADMAP.md .planning/STATE.md .planning/REQUIREMENTS.md)",
+      "Bash(git -C \"C:/Users/pedro/OneDrive/Documentos/projetos/automations\" commit -m \"docs: create roadmap\")"
+    ]
+  }
+}
