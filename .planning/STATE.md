@@ -1,7 +1,7 @@
 # Project State
 
 **Current Phase:** 1
-**Status:** Not started
+**Status:** Planned — ready to execute
 
 ## Project Reference
 See: .planning/PROJECT.md
@@ -10,4 +10,7 @@ See: .planning/PROJECT.md
 **Current focus:** Phase 1 — Core Pipeline
 
 ## Phase History
-(none yet)
+
+| Phase | Status | Completed |
+|-------|--------|-----------|
+| 1 | Planned | 2026-05-14 |
