@@ -11,6 +11,10 @@ const BASE_URL = 'https://projudi.tjba.jus.br/projudi/';
 const STATE_DIR = path.join(__dirname, 'state');
 const CONFIG_PATH = path.join(__dirname, 'config', 'processes.json');
 
+// Delay between consecutive case requests (CFG-02, CLAUDE.md — sequential only, no parallel)
+const BASE_DELAY_MS = 3000;
+const JITTER_MS = 2000; // adds 0-2000ms random additional delay
+
 // ---------------------------------------------------------------------------
 // HELPERS
 // ---------------------------------------------------------------------------
@@ -152,7 +156,7 @@ async function scrapeCase(page, caseNumber, flags) {
   // Assert we found at least one movimentação (REL-03 — detect silent empty scrape)
   if (movimentacoes.length === 0) {
     throw new Error(
-      'No movimentação rows found for ' + caseNumber +
+      'No movimentacao rows found for ' + caseNumber +
       ' — possible page load failure or selector mismatch'
     );
   }
@@ -177,6 +181,8 @@ async function processCase(page, proc, flags) {
   const storedIds = new Set((stored.movimentacoes ?? []).map(m => m.id));
   const newMovs = fresh.filter(m => !storedIds.has(m.id));
 
+  if (flags.verbose) console.log('[verbose]', newMovs.length, 'new movimentacao(s) found for', caseNumber);
+
   // Print new entries (DIFF-02, DIFF-03 — no output when nothing new)
   if (newMovs.length > 0) {
     console.log('\n=== ' + label + ' ===');
@@ -192,8 +198,9 @@ async function processCase(page, proc, flags) {
       lastChecked: new Date().toISOString(),
       movimentacoes: fresh,
     });
-  } else if (flags.verbose) {
-    console.log('[verbose] --dry-run: state NOT saved for', caseNumber);
+    if (flags.verbose) console.log('[verbose] State saved to', path.join(STATE_DIR, caseNumber + '.json'));
+  } else {
+    if (flags.verbose) console.log('[verbose] --dry-run active: state NOT saved for', caseNumber);
   }
 }
 
@@ -226,11 +233,32 @@ async function main() {
 
   const page = await context.newPage();
 
-  // REL-02: try/finally guarantees browser.close() always runs
+  // REL-01: per-case error isolation — one bad case does not abort the batch
+  let hadFailure = false;
+
+  // REL-02: try/finally guarantees browser.close() always runs, even when every case throws
   try {
-    // Wave 1: single process only (processes[0])
-    // Wave 2 will add the full loop + delay+jitter between cases (CFG-02, SCRP-02, REL-01)
-    await processCase(page, processes[0], flags);
+    for (const proc of processes) {
+      try {
+        if (flags.verbose) console.log('[verbose] Processing case:', proc.caseNumber, proc.label ? ('(' + proc.label + ')') : '');
+        await processCase(page, proc, flags);
+      } catch (err) {
+        console.error('[ERROR] ' + (proc.label ?? proc.caseNumber) + ': ' + err.message);
+        hadFailure = true;
+      }
+
+      // Delay between cases — NOT after the last one (CFG-02, SCRP-02)
+      if (proc !== processes[processes.length - 1]) {
+        const delayMs = BASE_DELAY_MS + Math.floor(Math.random() * JITTER_MS);
+        if (flags.verbose) console.log('[verbose] Waiting ' + delayMs + 'ms before next case...');
+        await sleep(delayMs);
+        if (flags.verbose) console.log('[verbose] Delay complete, continuing to next case');
+      }
+    }
+
+    // Set exit code AFTER loop, BEFORE finally executes (DIFF-04)
+    // Using process.exitCode (NOT process.exit()) so async browser.close() in finally can complete
+    process.exitCode = hadFailure ? 1 : 0;
   } finally {
     await browser.close();
   }
