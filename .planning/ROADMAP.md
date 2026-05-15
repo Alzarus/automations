@@ -6,7 +6,7 @@ Node.js browser automation monorepo. First automation: `projudi-monitor`, a Play
 
 ## Phases
 
-- [ ] **Phase 1: Core Pipeline** - Working monitor that detects new court movimentacoes and fails loudly on error
+- [x] **Phase 1: Core Pipeline** - Working monitor that detects new court movimentacoes and fails loudly on error
 - [ ] **Phase 2: Documentation** - README that lets a new user install, configure, and schedule the monitor without asking questions
 
 ---
@@ -26,7 +26,7 @@ Node.js browser automation monorepo. First automation: `projudi-monitor`, a Play
 
 Plans:
 - [x] 01-01-PLAN.md — Walking Skeleton: scaffold project, navigate Projudi, extract movimentacoes, diff, print, save state (Wave 1)
-- [ ] 01-02-PLAN.md — Harden Pipeline: multi-process loop, error isolation, exit codes, full CLI flags, empty-result assertion (Wave 2)
+- [x] 01-02-PLAN.md — Harden Pipeline: multi-process loop, error isolation, exit codes, full CLI flags, empty-result assertion (Wave 2)
 
 ### Phase 2: Documentation
 **Goal:** A user with no prior knowledge of the project can install, configure a process list, run the monitor manually, and set up a scheduled job by following the README alone.
@@ -43,5 +43,5 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Pipeline | 1/2 | In progress | - |
+| 1. Core Pipeline | 2/2 | Complete | 2026-05-15 |
 | 2. Documentation | 0/1 | Not started | - |

@@ -12,12 +12,12 @@
 ### Configuration
 
 - [x] **CFG-01**: Lista de processos configurável em `config/processes.json` com campo `caseNumber` (e `label` opcional)
-- [ ] **CFG-02**: Delay entre consultas configurável (padrão: 3000ms + jitter aleatório)
+- [x] **CFG-02**: Delay entre consultas configurável (padrão: 3000ms + jitter aleatório)
 
 ### Scraping
 
 - [x] **SCRP-01**: Script navega no Projudi TJBA via "consulta pública por teor" sem login nem CAPTCHA
-- [ ] **SCRP-02**: Suporta múltiplos processos em sequência (não paralelo)
+- [x] **SCRP-02**: Suporta múltiplos processos em sequência (não paralelo)
 - [x] **SCRP-03**: Browser roda com User-Agent realista e sem sinalização de automação (`--disable-blink-features=AutomationControlled`)
 
 ### Parsing
@@ -37,11 +37,11 @@
 - [x] **DIFF-01**: Detecta movimentações novas comparando fresh vs stored por ID
 - [x] **DIFF-02**: Imprime movimentações novas no terminal agrupadas por processo
 - [x] **DIFF-03**: Sem saída se não há novidades (idempotente)
-- [ ] **DIFF-04**: Exit code 0 = sucesso total; exit code 1 = ao menos um processo falhou
+- [x] **DIFF-04**: Exit code 0 = sucesso total; exit code 1 = ao menos um processo falhou
 
 ### Reliability
 
-- [ ] **REL-01**: Erro em um processo não para o batch — log do erro e continua para o próximo
+- [x] **REL-01**: Erro em um processo não para o batch — log do erro e continua para o próximo
 - [x] **REL-02**: `try/finally` garante `browser.close()` sempre executa (sem Chromium órfão no Windows)
 - [x] **REL-03**: Assertiva de que o container de resultados não está vazio (detecta scrape silenciosamente vazio)
 
@@ -89,9 +89,9 @@
 |-------------|-------|--------|
 | MONO-01 | Phase 1 | Complete (01-01) |
 | CFG-01 | Phase 1 | Complete (01-01) |
-| CFG-02 | Phase 1 | Pending (01-02) |
+| CFG-02 | Phase 1 | Complete (01-02) |
 | SCRP-01 | Phase 1 | Complete (01-01) |
-| SCRP-02 | Phase 1 | Pending (01-02) |
+| SCRP-02 | Phase 1 | Complete (01-02) |
 | SCRP-03 | Phase 1 | Complete (01-01) |
 | PARS-01 | Phase 1 | Complete (01-01) |
 | PARS-02 | Phase 1 | Complete (01-01) |
@@ -102,8 +102,8 @@
 | DIFF-01 | Phase 1 | Complete (01-01) |
 | DIFF-02 | Phase 1 | Complete (01-01) |
 | DIFF-03 | Phase 1 | Complete (01-01) |
-| DIFF-04 | Phase 1 | Pending (01-02) |
-| REL-01 | Phase 1 | Pending (01-02) |
+| DIFF-04 | Phase 1 | Complete (01-02) |
+| REL-01 | Phase 1 | Complete (01-02) |
 | REL-02 | Phase 1 | Complete (01-01) |
 | REL-03 | Phase 1 | Complete (01-01) |
 | CLI-01 | Phase 1 | Complete (01-01) |
