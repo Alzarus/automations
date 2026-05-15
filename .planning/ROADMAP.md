@@ -22,7 +22,11 @@ Node.js browser automation monorepo. First automation: `projudi-monitor`, a Play
 2. Running the script twice in a row without actual court updates produces identical output (idempotent — no false positives on second run).
 3. A broken or unreachable case number logs an error for that case and continues processing the remaining cases; the script exits with code 1 only when at least one case failed.
 4. Running with `--dry-run` shows the diff but leaves state files unchanged; `--verbose` emits navigation and timing details to stdout.
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Walking Skeleton: scaffold project, navigate Projudi, extract movimentacoes, diff, print, save state (Wave 1)
+- [ ] 01-02-PLAN.md — Harden Pipeline: multi-process loop, error isolation, exit codes, full CLI flags, empty-result assertion (Wave 2)
 
 ### Phase 2: Documentation
 **Goal:** A user with no prior knowledge of the project can install, configure a process list, run the monitor manually, and set up a scheduled job by following the README alone.
@@ -39,5 +43,5 @@ Node.js browser automation monorepo. First automation: `projudi-monitor`, a Play
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Pipeline | 0/? | Not started | - |
+| 1. Core Pipeline | 0/2 | Not started | - |
 | 2. Documentation | 0/1 | Not started | - |
