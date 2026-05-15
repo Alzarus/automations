@@ -25,7 +25,7 @@ Node.js browser automation monorepo. First automation: `projudi-monitor`, a Play
 **Plans:** 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Walking Skeleton: scaffold project, navigate Projudi, extract movimentacoes, diff, print, save state (Wave 1)
+- [x] 01-01-PLAN.md — Walking Skeleton: scaffold project, navigate Projudi, extract movimentacoes, diff, print, save state (Wave 1)
 - [ ] 01-02-PLAN.md — Harden Pipeline: multi-process loop, error isolation, exit codes, full CLI flags, empty-result assertion (Wave 2)
 
 ### Phase 2: Documentation
@@ -43,5 +43,5 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Pipeline | 0/2 | Not started | - |
+| 1. Core Pipeline | 1/2 | In progress | - |
 | 2. Documentation | 0/1 | Not started | - |
