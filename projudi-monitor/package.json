@@ -1,0 +1,12 @@
+{
+  "name": "projudi-monitor",
+  "version": "1.0.0",
+  "description": "CLI que monitora movimentações de processos no Projudi TJBA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}
