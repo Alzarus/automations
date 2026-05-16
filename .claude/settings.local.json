@@ -20,7 +20,8 @@
       "WebFetch(domain:brightdata.com)",
       "Bash(powershell.exe *)",
       "Bash(git -C \"C:/Users/pedro/OneDrive/Documentos/projetos/automations\" add .planning/ROADMAP.md .planning/STATE.md .planning/REQUIREMENTS.md)",
-      "Bash(git -C \"C:/Users/pedro/OneDrive/Documentos/projetos/automations\" commit -m \"docs: create roadmap\")"
+      "Bash(git -C \"C:/Users/pedro/OneDrive/Documentos/projetos/automations\" commit -m \"docs: create roadmap\")",
+      "Bash(git push *)"
     ]
   }
 }
