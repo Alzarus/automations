@@ -1,14 +1,15 @@
 # Project State
 
-**Current Phase:** 2
-**Current Plan:** 1 of 1
-**Status:** Complete — All phases done. Phase 2 Documentation complete; DOC-01 satisfied.
+**Current Phase:** None — v1.0 shipped
+**Current Plan:** —
+**Status:** v1.0 MVP complete and archived. Start `/gsd-new-milestone` to begin next cycle.
 
 ## Project Reference
-See: .planning/PROJECT.md
+
+See: .planning/PROJECT.md (updated 2026-05-16)
 
 **Core value:** Monitorar automaticamente movimentações novas em processos jurídicos no Projudi TJBA e registrá-las localmente, sem intervenção manual repetitiva.
-**Current focus:** Phase 1 — Core Pipeline
+**Current focus:** Planning next milestone
 
 ## Phase History
 
@@ -38,5 +39,5 @@ See: .planning/PROJECT.md
 ## Last Session
 
 **Timestamp:** 2026-05-16
-**Stopped at:** Completed 02-01-PLAN.md (projudi-monitor README — Phase 2 complete)
-**Resume file:** None — all phases complete
+**Stopped at:** Completed v1.0 milestone archival
+**Resume file:** None — start `/gsd-new-milestone` for next cycle
