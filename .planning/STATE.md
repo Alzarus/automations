@@ -1,8 +1,8 @@
 # Project State
 
-**Current Phase:** 1
-**Current Plan:** 2 of 2
-**Status:** Complete — Phase 1 Core Pipeline fully implemented (21/22 v1 requirements; DOC-01 is Phase 2)
+**Current Phase:** 2
+**Current Plan:** 1 of 1
+**Status:** Complete — All phases done. Phase 2 Documentation complete; DOC-01 satisfied.
 
 ## Project Reference
 See: .planning/PROJECT.md
@@ -15,6 +15,7 @@ See: .planning/PROJECT.md
 | Phase | Status | Completed |
 |-------|--------|-----------|
 | 1 | Complete | 2026-05-15 |
+| 2 | Complete | 2026-05-16 |
 
 ## Decisions Made
 
@@ -24,6 +25,7 @@ See: .planning/PROJECT.md
 4. Data rows identified by exactly 7 cells; column [0]=nº [1]=description [2]=date [3]=movedBy
 5. Use process.exitCode (not process.exit()) so async browser.close() in finally completes before Node exits
 6. Delay inserted between cases only — not after the last one — to avoid unnecessary wait at end of batch
+7. README written directly from index.js source of truth; all flags, exit codes, and field names verified before documenting
 
 ## Performance Metrics
 
@@ -31,9 +33,10 @@ See: .planning/PROJECT.md
 |-------|------|----------|-------|-------|
 | 01-core-pipeline | 01 | ~90min | 2/2 | 5 |
 | 01-core-pipeline | 02 | ~30min | 2/2 | 1 |
+| 02-documentation | 01 | ~10min | 1/1 | 1 |
 
 ## Last Session
 
-**Timestamp:** 2026-05-15
-**Stopped at:** Completed 01-02-PLAN.md (hardened pipeline — Phase 1 complete)
-**Resume file:** None — Phase 2 (Documentation) next
+**Timestamp:** 2026-05-16
+**Stopped at:** Completed 02-01-PLAN.md (projudi-monitor README — Phase 2 complete)
+**Resume file:** None — all phases complete

@@ -7,7 +7,7 @@ Node.js browser automation monorepo. First automation: `projudi-monitor`, a Play
 ## Phases
 
 - [x] **Phase 1: Core Pipeline** - Working monitor that detects new court movimentacoes and fails loudly on error
-- [ ] **Phase 2: Documentation** - README that lets a new user install, configure, and schedule the monitor without asking questions
+- [x] **Phase 2: Documentation** - README that lets a new user install, configure, and schedule the monitor without asking questions
 
 ---
 
@@ -38,7 +38,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 02-01-PLAN.md — Write README: installation, configuration, running manually, scheduling on Linux and Windows (Wave 1)
+- [x] 02-01-PLAN.md — Write README: installation, configuration, running manually, scheduling on Linux and Windows (Wave 1)
 
 ---
 
@@ -47,4 +47,4 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Pipeline | 2/2 | Complete | 2026-05-15 |
-| 2. Documentation | 0/1 | Not started | - |
+| 2. Documentation | 1/1 | Complete | 2026-05-16 |

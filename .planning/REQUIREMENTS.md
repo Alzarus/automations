@@ -52,7 +52,7 @@
 
 ### Documentation
 
-- [ ] **DOC-01**: README em `projudi-monitor/` com: instalação, configuração do `processes.json`, como rodar manualmente, como configurar cron (Linux) e Task Scheduler (Windows)
+- [x] **DOC-01**: README em `projudi-monitor/` com: instalação, configuração do `processes.json`, como rodar manualmente, como configurar cron (Linux) e Task Scheduler (Windows)
 
 ## v2 Requirements
 
@@ -108,7 +108,7 @@
 | REL-03 | Phase 1 | Complete (01-01) |
 | CLI-01 | Phase 1 | Complete (01-01) |
 | CLI-02 | Phase 1 | Complete (01-01) |
-| DOC-01 | Phase 2 | Pending |
+| DOC-01 | Phase 2 | Complete (02-01) |
 
 **Coverage:**
 - v1 requirements: 22 total
