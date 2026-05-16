@@ -35,7 +35,10 @@ Plans:
 **Success Criteria:**
 1. A user following the README from scratch can install dependencies, populate `config/processes.json`, and execute `node index.js` successfully without consulting external resources.
 2. The README provides copy-paste cron (Linux) and Task Scheduler (Windows) instructions that schedule the monitor to run automatically.
-**Plans:** TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 02-01-PLAN.md — Write README: installation, configuration, running manually, scheduling on Linux and Windows (Wave 1)
 
 ---
 
